@@ -1,0 +1,586 @@
+#wrap{
+	position: absolute;
+	/*width: 100%;*/
+	height: 100%;
+	overflow: hidden;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	min-width: 1024px;
+	min-height: 768px;
+}
+
+/*left-part right-part*/
+.left-part,.right-part{
+	position: absolute;
+	width: 330px;
+	height: 100%;
+	top: 0;
+	transition: all 1s;
+}
+
+#container{
+	width: 100%;
+	height: 102%;
+}
+
+.left-part{
+	left: 0;
+}
+.right-part{
+	right: 0;
+}
+.left-part.hide{
+	left: -330px;
+}
+.left-part.hide .left-bar{
+	background-position: -12px 0;
+}
+
+.right-part.hide{
+	right: -330px;
+}
+.right-part.hide .right-bar{
+	background-position: -41px 0;
+}
+/*弹出层统一样式*/
+.chart-stage{
+	border-style: solid;
+	border-width: 1px;
+	border-color: rgb( 59, 255, 248);
+	border-radius: 4px;
+	/*background-color: rgba( 5, 68, 92, 0.902);*/
+	background: url(../img/bg.png) 0 0 repeat;
+	position: absolute;
+	z-index: 312;
+	width: 100%;
+	height: 28%;
+}
+/*饼状图*/
+.pie {
+	left: 0px;
+	top: 43%;
+}
+#pie{
+	height: 85%;
+}
+.pieTitle{
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	font-size: 16px;
+}
+/*图标 数量样式*/
+.chart-count{
+	font-size: 20px;
+	color: rgb(39,236,226);
+}
+/*民众满意度最低*/
+.lowest{
+	font-size: 16px;
+	color: rgb(86,233,255);
+	padding: 5px 10px;
+}
+
+
+
+/*环形图*/
+#circular {
+	left: 0px;
+	top: 38%;
+	height: 28%;
+	/*隐藏*/
+	display: none;
+}
+/*折线图*/
+.line1 {
+	left: 0px;
+	bottom: 0;
+}
+.line2{
+	right: 0;
+	top: 0px;
+}
+#line1,#line2,#bar{
+	height: 100%;
+}
+#bar{
+	height: 120%;
+	position: relative;
+	bottom: 14%;
+}
+/*折线图顶部*/
+.line-top{
+	position: absolute;
+	padding: 20px;
+	top: 0;
+	box-sizing: border-box;
+	width: 100%;
+}
+.line-top span{
+	display: inline-block;
+}
+.circle{
+	width: 8px;
+	height: 8px;
+	border-radius: 4px;
+	background-color:rgb(79,255,245) ;
+	margin-top: 3px;
+}
+/*柱状图*/
+.bar{
+	right: 0;
+	top: 29%;
+}
+/*治安等级*/
+.gradeLevel{
+	right: 0;
+	bottom: 0;
+	height: 42%;
+	font-size: 14px;
+	padding: 0 15%;
+	box-sizing: border-box;
+}
+.gradeLevel ul{
+	height: 100%;
+}
+.gradeLevel li{
+	float: left;
+	width: 100%;
+	height: 6%;
+	margin-top: 5%;
+	/*margin: 19px 0;*/
+}
+.gradeLevel span{
+	float: left;
+}
+.l-circle{
+	width: 7px;
+  	height: 7px;
+	border-radius: 50%;
+	margin-right: 30px;
+	margin-top: 5px;
+}
+.l-content{
+	width: 60%;
+}
+.l-grade.bad{
+	color: rgb(233,70,73);
+}
+/*警情*/
+.circular{
+	left: 0;
+	top:0;
+	height: 42%;
+	font-size: 16px;
+}
+/*右上角接警处警*/
+.policeTtl{
+	position: absolute;
+	top: 5px;
+	right: 0;
+	width: 40%;
+	height: 60px;
+}
+.policeTtl>p{
+	height: 50%;
+ 	line-height: 30px;
+    font-size: 20px;
+    color: rgb( 19, 255, 252 );
+}
+.policeTtl span{
+	float: left;
+	margin-right: 15px;
+	width: 50%;
+	text-align: right;
+	color: #FFFFFF;
+	font-size: 16px;
+}
+/*详情*/
+.policeDtl{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 35%;
+	box-sizing: border-box;
+	padding-top: 20px;
+}
+.policeDtl>li{
+	float: left;
+	width: 50%;
+	height: 32px;
+	padding-left: 15px;
+	box-sizing: border-box;
+	
+}
+.policeDtl span{
+	display: inline-block;
+	width: 60px;
+	text-align: center;
+}
+/*legend*/
+.legend{
+	height: 140px;
+	position: absolute;
+	bottom: 0;
+	left: 0px;
+	font-size: 16px;
+	box-sizing: border-box;
+	padding: 20px;
+	z-index: 10;
+	transition: all 1s;
+	opacity: 0;
+}
+.hide .legend{
+	z-index: -1;
+}
+.legend>li{
+	width: 100%;
+	height: 30px;
+}
+.legend span{
+	display: inline-block;
+	width: 11px;
+	height: 11px;
+	 margin-right: 10px;
+}
+/**/
+.left-bar,.right-bar{
+	position: absolute;
+	width: 13px;
+	height: 116px;
+	background: url(../img/sprite.png) no-repeat 1px 0;
+	top: 50%;
+	transform: translateY(-50%);
+}
+.left-bar{
+	right: -12px;
+}
+.right-part .right-bar{
+	left: -12px;
+	background-position: -27px 0;
+}
+/*
+ */
+#round{
+	/*width: 65%;
+	height: 60%;*/
+	margin-top: 10px;
+	margin-left: 30px;
+}
+/**/
+.round{
+	position: absolute;
+	top: 5%;
+	left: 0;
+	width: 330px;
+	height: 230px;
+	perspective: 2000px;
+}
+@media only screen and (max-height: 868px) {
+	.round{
+		top: 0%;
+	}
+}
+.yuan{
+	position: absolute;
+	border-radius: 50%;
+	background-color: #42B983;
+	/*opacity: 0;*/
+	font-size: 14px;
+	transform-style: preserve-3d;
+	transition: transform .2s;
+}
+.yuan:hover{
+	cursor: pointer;
+	transform:scale(1.1);
+	box-shadow: rgba(0,0,0,.4) 0px 0px 10px;
+}
+
+.yuan p{
+	top: 40%;
+}
+.yuan span{
+	top: 60%;
+}
+.yuan p,.yuan span{
+	position: absolute;
+	text-align: center;
+	opacity: 0;
+	left: 50%;
+	width: 100%;
+	transform: translate(-50%,-50%);
+}
+.yuan p.show,.yuan span.show{
+	opacity: 1;
+}
+.first{
+	width: 100px;
+	height: 100px;
+	left: 40px;
+	top: 10px;
+	background-color: #007de8;
+	animation: first 1s linear;
+}
+.second{
+	width: 94px;
+	height: 94px;
+	left: 140px;
+	top: 20px;
+	background-color: #01b93f;
+	animation: second 1s linear;
+}
+.third{
+	width: 88px;
+	height: 88px;
+	left: 200px;
+	top: 90px;
+	background-color: #e37829;
+	animation: third 1s linear;
+}
+.four{
+	width: 82px;
+	height: 82px;
+	left: 140px;
+	top: 150px;
+	background-color: #9b81ff;
+	animation: four 1s linear;
+}
+.five{
+	width: 76px;
+	height: 76px;
+	left: 70px;
+	top: 150px;
+	background-color: #eaa80e;
+	animation: five 1s linear;
+}
+.six{
+	width: 70px;
+	height: 70px;
+	left: 30px;
+	top: 100px;
+	background-color: #24c5ec;
+	animation: six 1s linear;
+}
+
+@media only screen and (max-width: 1024px) {
+	.first{
+	width: 90px;
+	height: 90px;
+	left: 50px;
+	top: 26px;
+	background-color: #007de8;
+	animation: first 1s linear;
+}
+.second{
+	width: 84px;
+	height: 84px;
+	left: 138px;
+	top: 38px;
+	background-color: #01b93f;
+	animation: second 1s linear;
+}
+.third{
+	width: 80px;
+	height: 80px;
+	left: 200px;
+	top: 95px;
+	background-color: #e37829;
+	animation: third 1s linear;
+}
+.four{
+	width: 76px;
+	height: 76px;
+	left: 150px;
+	top: 150px;
+	background-color: #9b81ff;
+	animation: four 1s linear;
+}
+.five{
+	width: 70px;
+	height: 70px;
+	left: 80px;
+	top: 150px;
+	background-color: #eaa80e;
+	animation: five 1s linear;
+}
+.six{
+	width: 66px;
+	height: 66px;
+	left: 40px;
+	top: 100px;
+	background-color: #24c5ec;
+	animation: six 1s linear;
+}
+}
+
+/*圆形动画*/
+@keyframes first{
+	from{
+		width: 0;
+		height: 0;
+		left: 100px;
+		top: 60px;
+		opacity: 0;
+	}
+	to{
+		width: 100px;
+		height: 100px;
+		left: 50px;
+		top: 10px;
+		opacity: 1;
+	}
+}
+@keyframes second{
+	0%{
+		width: 0;
+		height: 0;
+		left: 50px;
+		top: 10px;
+		opacity: 0;
+	}
+	100%{
+		width: 94px;
+		height: 94px;
+		left: 150px;
+		top: 20px;
+		opacity: 1;
+	}
+}
+@keyframes third{
+	0%{
+		width: 0;
+		height: 0;
+		left: 254px;
+		top: 134px;
+		opacity: 0;
+	}
+	50%{
+		width: 44px;
+		height: 44px;
+		left: 150px;
+		top: 20px;
+		opacity: .5;
+	}
+	100%{
+		width: 88px;
+		height: 88px;
+		left: 210px;
+		top: 90px;
+		opacity: 1;
+	}
+}
+@keyframes four{
+	0%{
+		width: 0;
+		height: 0;
+		left: 59px;
+		top: 19px;
+		opacity: 0;
+	}
+	33%{
+		width: 27px;
+		height: 27px;
+		left: 156px;
+		top: 26px;
+		opacity: 0.3;
+	}
+	66%{
+		width: 54px;
+		height: 54px;
+		left: 213px;
+		top: 93px;
+		opacity: 0.6;
+	}
+	100%{
+		width: 82px;
+		height: 82px;
+		left: 150px;
+		top: 150px;
+		opacity: 1;
+	}
+}
+@keyframes five{
+	0%{
+		width: 0;
+		height: 0;
+		left: 62px;
+		top: 22px;
+		opacity: 0;
+	}
+	25%{
+		width: 19px;
+		height: 19px;
+		left: 159px;
+		top: 29px;
+		opacity: 0.25;
+	}
+	50%{
+		width: 38px;
+		height: 38px;
+		left: 216px;
+		top: 96px;
+		opacity: 0.5;
+	}
+	75%{
+		width: 57px;
+		height: 57px;
+		left: 153px;
+		top: 153px;
+		opacity: 0.75;
+	}
+	100%{
+		width: 76px;
+		height: 76px;
+		left: 80px;
+		top: 150px;
+		opacity: 1;
+	}
+}
+@keyframes six{
+	0%{
+		width: 0;
+		height: 0;
+		left: 65px;
+		top: 35px;
+		opacity: 0;
+	}
+	20%{
+		width: 14px;
+		height: 14px;
+		left: 162px;
+		top: 32px;
+		opacity: 0.2;
+	}
+	40%{
+		width: 28px;
+		height: 28px;
+		left: 219px;
+		top: 99px;
+		opacity: 0.4;
+	}
+	60%{
+		width: 42px;
+		height: 42px;
+		left: 156px;
+		top: 156px;
+		opacity: 0.6;
+	}
+	80%{
+		width: 56px;
+		height: 56px;
+		left: 80px;
+		top: 140px;
+		opacity: 0.8;
+	}
+	100%{
+		width: 70px;
+		height: 70px;
+		left: 40px;
+		top: 100px;
+		opacity: 1;
+	}
+}

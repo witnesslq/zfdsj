@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta http-equiv = "X-UA-Compatible" content = "IE=edge,chrome=1" />
+		<title>大数据</title>
+		<link rel="stylesheet" type="text/css" href="src/css/reset.css"/>
+		<script src="src/js/mapStyle.js" type="text/javascript" charset="utf-8"></script>
+		 <link rel="stylesheet" href="http://cache.amap.com/lbs/static/main1119.css"/>
+	    <script src="http://webapi.amap.com/maps?v=1.3&key=408dd0462e97a0349450193689032c0b"></script>
+		<script src="src/js/lib/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			#container{
+				background: url(src/img/main.png) center center;
+			}
+		</style>
+		
+	</head>
+	<body>
+		<div id="wrap">
+			<!-- 1、用户展示地图容器DOM -->
+			<div style="width: 100%;height: 100%;overflow: hidden;">
+				<div id="container">
+				</div>
+			</div>
+			<!-- 左侧部分 -->
+			<div class="left-part hide">
+				<a class="left-bar tabs hide"></a>
+				<!-- 2、饼图 -->
+				<div class="chart-stage pie">
+					<div style="position: absolute;top: 0;" class="pieTitle"><span>12345</span>市民投诉数量 <span class="chart-count">45</span> 起, 举报分布区域</div>
+					<div id="pie"></div>
+					<div class="lowest"><span>张家港</span>民众满意度最低</div>
+				</div>
+				<!-- 3、环形图 -->
+				<div id="circular" class="chart-stage"></div>
+				<!-- 4、折线图 1-->
+				<div class="chart-stage line1">
+					<div class="line-top">
+						<p class="lf">单位：起</p>
+						<p class="rt">
+							<span  class="circle"></span>
+							<sapn>当日</sapn>
+							<span  class="circle" style="background-color:rgb(255,172,60);"></span>
+							<span>去年同比</span>
+						</p>
+					</div>
+					<div id="line1"></div>
+				</div>
+				<!-- 8、警情 -->
+				<div class="chart-stage circular">
+					<!--<canvas id="round" width="300" height="230">
+						
+					</canvas>-->
+					
+					<div class="round">
+						<div class="first yuan">
+							<p>消防类警情</p>
+							<span>34%</span>
+						</div>
+						<div class="second yuan">
+							<p>交通类警情</p>
+							<span>32%</span>
+						</div>
+						<div class="third yuan">
+							<p>刑事警情</p>
+							<span>18%</span>
+						</div>
+						<div class="four yuan">
+							<p>治安警情</p>
+							<span>7%</span>
+						</div>
+						<div class="five yuan">
+							<p>纠纷</p>
+							<span>4%</span>
+						</div>
+						<div class="six yuan">
+							<p>举报投诉</p>
+							<span>5%</span>
+						</div>
+					</div>
+					<!-- 今日接警处警 -->
+					<div class="policeTtl">
+						<p><span>今日接警</span>2520</p>
+						<p><span>处警</span>2520</p>
+					</div>
+					<!-- 警情详情 -->
+					<ul class="policeDtl">
+						<li>
+							<p>消防警情<span>930</span>个</p>
+						</li>
+						<li>
+							<p>交警警情<span>870</span>个</p>
+						</li>
+						<li>
+							<p>纠&nbsp; &nbsp; &nbsp;&nbsp; 纷<span>200</span>个</p>
+						</li>
+						<li>
+							<p>治安警情<span>500</span>个</p>
+						</li>
+						<li>
+							<p>举报投诉<span>100</span>个</p>
+						</li>
+						<li>
+							<p>刑事警情<span>130</span>个</p>
+						</li>
+						
+					</ul>
+				</div>
+			</div>
+			<!-- 9、legend -->
+			<ul class="legend">
+				<li>
+					<span></span>刑事案件
+				</li>
+				<li>
+					<span></span>12345市民举报
+				</li>
+				<li>
+					<span></span>治安处罚
+				</li>
+				<li>
+					<span></span>接处警信息
+				</li>
+			</ul>
+			<!-- 右侧部分 -->
+			<div class="right-part hide">
+				<a class="right-bar tabs hide"></a>
+				<!-- 5、优良中差 -->
+				<div id="gradeLevel" class="gradeLevel chart-stage">
+					<div style="height: 4%;"></div>
+					<ul >
+						<li class="clear-float">
+							<span class="l-circle"></span>
+							<span class="l-content">姑苏区治安状况：</span>
+							<span class="l-grade">优</span>
+						</li>
+						<li class="clear-float">
+							<span class="l-circle"></span>
+							<span class="l-content">虎丘区治安状况：</span>
+							<span class="l-grade">良</span>
+						</li>
+						<li class="clear-float">
+							<span class="l-circle"></span>
+							<span class="l-content">吴中区治安状况：</span>
+							<span class="l-grade">优</span>
+						</li>
+						<li class="clear-float">
+							<span class="l-circle"></span>
+							<span class="l-content">相城区治安状况：</span>
+							<span class="l-grade">优</span>
+						</li>
+						<li class="clear-float">
+							<span class="l-circle"></span>
+							<span class="l-content">吴江区治安状况：</span>
+							<span class="l-grade">优</span>
+						</li>
+						<li class="clear-float">
+							<span class="l-circle"></span>
+							<span class="l-content">常熟市治安状况：</span>
+							<span class="l-grade bad">差</span>
+						</li>
+						<li class="clear-float">
+							<span class="l-circle"></span>
+							<span class="l-content">张家港市治安状况：</span>
+							<span class="l-grade">优</span>
+						</li>
+						<li class="clear-float">
+							<span class="l-circle"></span>
+							<span class="l-content">昆山市治安状况：</span>
+							<span class="l-grade">中</span>
+						</li>
+						<li class="clear-float">
+							<span class="l-circle"></span>
+							<span class="l-content">太仓市治安状况：</span>
+							<span class="l-grade">优</span>
+						</li>
+					</ul>
+				</div>
+				<!-- 6、折线图2 -->
+				<div class="chart-stage line2">
+					<div class="line-top">
+						<p class="lf">当日刑事案件数量：<span>35</span>起</p>
+					</div>
+					<div id="line2"></div>
+				</div>
+				<!-- 7、柱状图 -->
+				<div class="chart-stage bar">
+				<div id="bar"></div>
+			</div>
+			</div>
+		</div>
+		
+		<link rel="stylesheet" type="text/css" href="src/css/style.css"/>
+		<script src="src/js/lib/echarts.js" type="text/javascript" charset="utf-8"></script>
+		<script src="src/js/data.js" type="text/javascript" charset="utf-8"></script>
+		<script src="src/js/method.js" type="text/javascript" charset="utf-8"></script>
+		<script src="src/js/pie.js" type="text/javascript" charset="utf-8"></script>
+		<script src="src/js/line.js" type="text/javascript" charset="utf-8"></script>
+		<script src="src/js/bar.js" type="text/javascript" charset="utf-8"></script>
+		<script src="src/js/other.js" type="text/javascript" charset="utf-8"></script>
+		<script src="src/js/circle.js" type="text/javascript" charset="utf-8"></script>
+		<script src="src/js/thermodynamic.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>

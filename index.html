@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>Title</title>
+    <link rel="stylesheet" href="./css/init.css">
+    <link rel="stylesheet" href="./css/x.css">
+    <script src="lib/jquery-1.8.3.min.js"></script>
+    <!--<script src="lib/Highcharts-5.0.14/code/highcharts.js"></script>-->
+    <!--<script src="lib/Highcharts-5.0.14/code/highcharts-more.js"></script>-->
+    <!--<script src="lib/Highcharts-5.0.14/code/modules/exporting.js"></script>-->
+    <!--<script src="lib/Highcharts-5.0.14/code/highcharts-zh_CN.js"></script>-->
+
+    <script src="lib/echarts-2.2.7/build/dist/echarts-all.js"></script>
+    <script src="lib/js.js"></script>
+</head>
+<body  style="min-width: 1024px;height: 768px;">
+<div class="x-container">
+    <div class="x-left">
+        <div id="container"></div>
+        <div class="quan rotate"></div>
+        <div class="data-detail">
+            <div class="data-animation">
+                <div class="data-detail-1-1">
+                </div>
+                <div class="data-detail-1-2">
+                </div>
+                <div class="data-detail-1-3">
+                </div>
+                <div class="data-detail-1-4">
+                </div>
+                <div class="data-detail-1-5">
+                    <!--详细数据-->
+                </div>
+            </div>
+            <div class="data-list-box">
+                <ul class="data-list">
+                    <li class="data-list-item">
+                        <span class="data-list-title">历史案件</span>
+                        <span class="data-list-st">20分</span>
+                    </li>
+                    <li class="data-list-item">
+                        <span class="data-list-title">行政处罚</span>
+                        <span class="data-list-st">20分</span>
+                    </li>
+                    <li class="data-list-item">
+                        <span class="data-list-title">历史信访</span>
+                        <span class="data-list-st">20分</span>
+                    </li>
+                    <li class="data-list-item">
+                        <span class="data-list-title">家庭情况</span>
+                        <span class="data-list-st">20分</span>
+                    </li>
+                    <li class="data-list-item">
+                        <span class="data-list-title">工作情况</span>
+                        <span class="data-list-st">20分</span>
+                    </li>
+                    <li class="data-list-item">
+                        <span class="data-list-title">收入情况</span>
+                        <span class="data-list-st">20分</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="x-right">
+        <div class="x-right-transform-center">
+            <div class="x-right-transform">
+                <div class="right-header">
+                    <div class="person-box">
+                        <div class="person-img"></div>
+                        <div class="person-name">郭襄</div>
+                    </div>
+                    <div class="person-jifen">
+                        <canvas id="Circle" height="150px" width="150px">
+
+                        </canvas>
+                        <div class="person-jifen-1">
+                            总分
+                        </div>
+                        <div class="person-jifen-2">
+                            600分
+                        </div>
+                    </div>
+                </div>
+                <div class="right-data-list">
+                    <ul>
+                        <li>
+                            <span class="right-data-list-color"><span class="index">1.</span>&nbsp;历史案件：</span>
+                            <span class="right-data-list-value">3</span>
+                            <span class="right-data-list-color">起</span>
+                        </li>
+                        <li>
+                            <span class="right-data-list-color"><span class="index">2.&nbsp;</span>历史案件：</span>
+                            <span class="right-data-list-value">15</span>
+                            <span class="right-data-list-color">起</span>
+                        </li>
+                        <li>
+                            <span class="right-data-list-color"><span class="index">3.&nbsp;</span>历史信访：</span>
+                            <span class="right-data-list-value">5</span>
+                            <span class="right-data-list-color">起</span>
+                        </li>
+                        <li>
+                            <span class="right-data-list-color"><span class="index">4.&nbsp;</span>家庭情况：</span>
+                            <span class="right-data-list-value">离异</span>
+                        </li>
+                        <li>
+                            <span class="right-data-list-color"><span class="index">5.&nbsp;</span>工作情况：</span>
+                            <span class="right-data-list-value">离异</span>
+                        </li>
+                        <li>
+                            <span class="right-data-list-color"><span class="index">6.&nbsp;</span>收入情况：</span>
+                            <span class="right-data-list-value">低</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="color-stand">
+                    <ul class="color-stand-calue">
+                        <li>600</li>
+                        <li>500</li>
+                        <li>400</li>
+                        <li>300</li>
+                        <li>200</li>
+                        <li>100</li>
+                        <li>0</li>
+                    </ul>
+                    <div class="color-bg"></div>
+                    <ul class="color-level">
+                        <li>较差</li>
+                        <li>中等</li>
+                        <li>良好</li>
+                        <li>优秀</li>
+                        <li>极好</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="right-light">
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

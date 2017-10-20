@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>Title</title>
+		<link rel="stylesheet" href="css/init.css">
+		<link rel="stylesheet" href="css/style.css">
+		<!--<script src="http://webapi.amap.com/maps?v=1.3&key=318dd0462e97a0349450193689032c0b"></script>
+		<script src="http://webapi.amap.com/ui/1.0/main.js?v=1.0.11"></script>-->
+	</head>
+
+	<body>
+		<div class="con-box">
+			<div style="width: 100%;height: 100%;overflow: hidden;position: absolute;background: url(img/index.png) center center;" id="wrap">
+				<div class="alert-img dianji"></div>
+				<div class="alert-img dianji"></div>
+				<div class="div-circle sel dianji"></div>
+				<div class="div-circle sel dianji"></div>
+				<div class="div-circle sel dianji"></div>
+				<div class="sj-area">
+					<p class="zd-area">重点区域事件</p>
+					<ul class="zd-area-list">
+						<li>振兴化工厂环境污染，不符合开厂条件，责令最晚于6月20日前，必须关闭，距离拆迁还有52天。</li>
+						<li>中华园区域入学情况该区域距离新生招生还有63。</li>
+					</ul>
+					<p class="zd-area bor-col">其他事件</p>
+					<ul class="zd-area-list qt-area-list">
+						<li>振兴化工厂环境污染，不符合开厂条件，责令最晚 于6月20日前，必须关闭，
+						</li>
+						<li>中华园区域入学情况该区域距离新生招生还有63。</li>
+						<li>振兴化工厂环境污染，不符合开厂条件，责令最晚 于6月20日前，必须关闭，距离拆迁还有52天。
+						</li>
+						<li>中华园区域入学情况该区域距离新生招生还有63。</li>
+						<li>振兴化工厂环境污染，不符合开厂条</li>
+						<li>中华园区域入学情况该区域</li>
+						<li>振兴化工厂环境污染，不符合开厂条件，</li>
+						<li>中华园区域入学情况该区域距离新生招生还有63。</li>
+					</ul>
+				</div>
+				<div class="tank">
+					<div class="tank-box">
+						<div class="tank-box-tit clearfix">
+							<p class="zd-tit">重点事件<span>（拆迁）</span></p>
+							<p class="zd-name"></p>
+						</div>
+						<div class="zd-detail-con">
+							<p class="zd-detail-tit"></p>
+							<p class="zhig zhig-bor">职&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;工<span class="zgdata"></span>人</p>
+							<p class="zhig">周边人口<span class="zbdata"></span>人</p>
+							<div class="ot-detail clearfix">
+								<div class="ot-detail-left">
+									<p class="ot-det-tit">涉案<br>人员</p>
+									<p class="ot-det-num sndata"></p>
+									<p class="ot-det-ren">人</p>
+								</div>
+								<div class="ot-detail-right">
+									<p class="ot-det-tit">重点<br>人员</p>
+									<p class="ot-det-num zddata"></p>
+									<p class="ot-det-ren">人</p>
+								</div>
+							</div>
+							<div class="ot-detail clearfix">
+								<div class="ot-detail-left">
+									<p class="ot-det-tit">周边<br>学校</p>
+									<p class="ot-det-num zbxx"></p>
+									<p class="ot-det-ren">所</p>
+								</div>
+								<div class="ot-detail-right">
+									<p class="ot-det-tit ot-det-tit1 xxmc"> </p>
+								</div>
+							</div>
+							<div class="ot-detail ot-detai1 clearfix">
+								<div class="ot-detail-left">
+									<p class="ot-det-tit ot-det-tit2">警力</p>
+									<p class="ot-det-num ot-det-num1 jlmc"></p>
+								</div>
+								<div class="ot-detail-right">
+									<p class="ot-det-tit">日常<br>巡逻</p>
+									<p class="ot-det-num rcxl"></p>
+									<p class="ot-det-ren">人</p>
+								</div>
+							</div>
+							<p class="fenxi">分析结果：</p>
+							<p class="fen-des fxjg"></p>
+						</div>
+					</div>
+					<div class="zz-colse"></div>
+				</div>
+			</div>
+
+		</div>
+		<script src="lib/jquery-1.8.3.min.js"></script>
+
+		<script src="lib/style.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				autoH();
+				var infoArr = [{
+					left: 1180.4804294885987,
+					top: 799.1000087197981,
+					id: 0,
+					sel: false
+				}, {
+					left: 252.2665235791582,
+					top: 382.4079159512169,
+					id: 1,
+					sel: false
+				}, {
+					left: 1169.8646396481245,
+					top: 678.0240377797884,
+					id: 2,
+					sel: false
+				}, {
+					left: 1331.816403740496,
+					top: 360.9860198088389,
+					id: 3,
+					sel: false
+				}, {
+					left: 1383.97565702224,
+					top: 417.39462580947315,
+					id: 4,
+					sel: false
+				}, {
+					left: 1405.2242221255353,
+					top: 766.3819679451658,
+					id: 5,
+					sel: false
+				}, {
+					left: 220.8778920518243,
+					top: 839.6433338770388,
+					id: 6,
+					sel: false
+				}, {
+					left: 1290.7372365214494,
+					top: 791.0983345499934,
+					id: 7,
+					sel: false
+				}, {
+					left: 369.9721465635877,
+					top: 491.899332790932,
+					id: 8,
+					sel: false
+				}, {
+					left: 1455.1900902812679,
+					top: 567.8377764719633,
+					id: 9,
+					sel: false
+				}, {
+					left: 1448.339422981893,
+					top: 344.92377704328123,
+					id: 10,
+					sel: false
+				}, {
+					left: 182.98400921541366,
+					top: 749.9727173513421,
+					id: 11,
+					sel: false
+				}, {
+					left: 1239.9854971529635,
+					top: 454.2904864902153,
+					id: 12,
+					sel: false
+				}, {
+					left: 368.3066511324415,
+					top: 320.818639382924,
+					id: 13,
+					sel: false
+				}, {
+					left: 391.94486432161244,
+					top: 255.7080068162137,
+					id: 14,
+					sel: false
+				}, {
+					left: 612.682592821191,
+					top: 216.35234047901716,
+					id: 15,
+					sel: false
+				}, {
+					left: 606.2822528694146,
+					top: 45.08978434483467,
+					id: 16,
+					sel: false
+				}, {
+					left: 588.8037809173364,
+					top: 86.31438233219612,
+					id: 17,
+					sel: false
+				}, {
+					left: 129.93178591634796,
+					top: 382.4097572156275,
+					id: 18,
+					sel: false
+				}, {
+					left: 1275.514557601559,
+					top: 737.1252342430354,
+					id: 19,
+					sel: false
+				}, {
+					left: 160.57031372808416,
+					top: 141.81197892105862,
+					id: 20,
+					sel: false
+				}, {
+					left: 703.7381758567457,
+					top: 282.03947060223953,
+					id: 21,
+					sel: false
+				}, {
+					left: 123.8215505730129,
+					top: 838.4581010776253,
+					id: 22,
+					sel: false
+				}, {
+					left: 895.516989369762,
+					top: 285.89315292841314,
+					id: 23,
+					sel: false
+				}, {
+					left: 533.8068492380607,
+					top: 172.71978651275353,
+					id: 24,
+					sel: false
+				}, {
+					left: 1375.1892318779264,
+					top: 718.8393136823057,
+					id: 25,
+					sel: false
+				}, {
+					left: 953.3376184189746,
+					top: 561.5689969085071,
+					id: 26,
+					sel: false
+				}, {
+					left: 812.2308833281971,
+					top: 478.7929034059378,
+					id: 27,
+					sel: true
+				}, {
+					left: 601.1374441177793,
+					top: 296.2714675431868,
+					id: 28,
+					sel: false
+				}, {
+					left: 1043.1739508856003,
+					top: 0.03262035652225803,
+					id: 29,
+					sel: false
+				}, {
+					left: 1148.9402512022566,
+					top: 523.2857212618632,
+					id: 30,
+					sel: false
+				}, {
+					left: 915.2997880871375,
+					top: 765.4936627958847,
+					id: 31,
+					sel: false
+				}, {
+					left: 1299.8453690053045,
+					top: 395.95398209353345,
+					id: 32,
+					sel: false
+				}, {
+					left: 195.33273471658322,
+					top: 841.3069693623451,
+					id: 33,
+					sel: false
+				}, {
+					left: 310.854518356869,
+					top: 211.60833429740254,
+					id: 34,
+					sel: false
+				}, {
+					left: 492.4633769789175,
+					top: 482.0141671743443,
+					id: 35,
+					sel: false
+				}, {
+					left: 1453.9054538691857,
+					top: 24.010471933931026,
+					id: 36,
+					sel: false
+				}, {
+					left: 625.6219887312001,
+					top: 894.1890932804528,
+					id: 37,
+					sel: false
+				}, {
+					left: 424.6868065553808,
+					top: 613.5318267520477,
+					id: 38,
+					sel: false
+				}, {
+					left: 1340.5939274579941,
+					top: 62.74494114680645,
+					id: 39,
+					sel: false
+				}, {
+					left: 650.3746609489582,
+					top: 457.72653589593773,
+					id: 40,
+					sel: true
+				}, {
+					left: 948.2231018887882,
+					top: 495.9652375601447,
+					id: 41,
+					sel: false
+				}, {
+					left: 1285.5292889885316,
+					top: 648.4020450877863,
+					id: 42,
+					sel: false
+				}, {
+					left: 112.72009516631525,
+					top: 794.4711490544095,
+					id: 43,
+					sel: false
+				}, {
+					left: 636.6358579200763,
+					top: 941.0970646308286,
+					id: 44,
+					sel: false
+				}, {
+					left: 993.7892858749634,
+					top: 176.0612673771214,
+					id: 45,
+					sel: false
+				}, {
+					left: 422.49479397902,
+					top: 580.5830177251149,
+					id: 46,
+					sel: false
+				}, {
+					left: 123.16898319277992,
+					top: 891.0743583764471,
+					id: 47,
+					sel: false
+				}, {
+					left: 485.3236200893414,
+					top: 159.4846410230039,
+					id: 48,
+					sel: false
+				}, {
+					left: 1187.5368154610164,
+					top: 561.6179534766162,
+					id: 49,
+					sel: false
+				}, {
+					left: 1031.469286502759,
+					top: 649.0196033481757,
+					id: 50,
+					sel: false
+				}, {
+					left: 442.4541537124558,
+					top: 88.07197823063677,
+					id: 51,
+					sel: false
+				}, {
+					left: 1230.1605684132464,
+					top: 961.3578746767756,
+					id: 52,
+					sel: false
+				}, {
+					left: 1253.3088646851606,
+					top: 641.8108398375837,
+					id: 53,
+					sel: false
+				}, {
+					left: 1381.5315149996609,
+					top: 768.8284681624189,
+					id: 54,
+					sel: false
+				}, {
+					left: 629.9124713179439,
+					top: 303.0914507153974,
+					id: 55,
+					sel: false
+				}, {
+					left: 311.7476504472836,
+					top: 657.6745077446222,
+					id: 56,
+					sel: false
+				}, {
+					left: 1200.0363653130298,
+					top: 131.89133024458891,
+					id: 57,
+					sel: false
+				}, {
+					left: 435.233765738046,
+					top: 458.0784746897632,
+					id: 58,
+					sel: false
+				}, {
+					left: 268.4245758761306,
+					top: 462.5233185166685,
+					id: 59,
+					sel: false
+				}]
+				var arr = [];
+				var poiNum = 60; //点位个数
+				var minR = 10; //最小半径
+				var maxR = 20; //最大半径
+				var  frag  =  document.createDocumentFragment();  // 创建文档碎片 
+				//循环生成多个点位
+				for(var i = 0; i < poiNum; i++) {
+					//随机生成点位半径
+					var radius = getNum(maxR, minR);
+					//获取浏览器可视区域大小
+					var width = document.documentElement.clientWidth;
+					var height = document.documentElement.clientHeight;
+					//随机生成位置
+					var left = infoArr[i].left;
+					var top = infoArr[i].top;
+					//
+					var div = document.createElement("div");
+					div.className = 'div-circle dianji';
+					if(infoArr[i].sel){
+						div.className += ' sel';
+					}
+					div.setAttribute("id", infoArr[i].id);
+					div.style.width = radius + 'px';
+					div.style.height = radius + 'px';
+					div.style.left = left + 'px';
+					div.style.top = top + 'px';
+					frag.appendChild(div);
+				}
+				document.getElementById("wrap").appendChild(frag);
+				//随机产生点位半径
+				function getNum(max, min) {
+					return Math.random() * (max - min) + min
+				}
+
+				$(".dianji").click(function() {
+					$(".sj-area").addClass("on");
+				})
+			});
+
+			function autoH() {
+				var docH = $(document).height();
+				var winH = $(window).height();
+				var winW = $(window).width();
+				if(docH > winH) {
+					$(".con-box").css({
+						"width": winW,
+						"height": docH
+					});
+					$(".tank").css({
+						"height": docH
+					})
+				}
+			}
+			$(window).resize(function() {
+				autoH()
+			});
+		</script>
+	</body>
+
+</html>

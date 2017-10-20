@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/init.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="con-box toolbg">
+    <div class="tool-box">
+        <ul class="clearfix">
+            <li><img src="img/toolcon01.png" alt=""><span>world</span></li>
+            <li><img src="img/toolcon02.png" alt=""><span>excel</span></li>
+            <li><img src="img/toolcon03.png" alt=""><span>pdf</span></li>
+            <li><img src="img/toolcon04.png" alt=""><span>office在线编辑</span></li>
+            <li><img src="img/toolcon05.png" alt=""><span>world痕迹保留</span></li>
+        </ul>
+    </div>
+</div>
+<script src="lib/jquery-1.8.3.min.js"></script>
+
+<script src="lib/style.js"></script>
+<script type="text/javascript">
+    $(function () {
+        autoH();
+    });
+    function autoH() {
+        var docH = $(document).height();
+        var winH = $(window).height();
+        var winW = $(window).width();
+        if (docH > winH) {
+            $(".con-box").css({"width": winW, "height": docH});
+            $(".tank").css({"height": docH});
+            $(".tool-box").removeClass("add-tool-box").addClass("rem-tool-box")
+        }else{
+            $(".con-box").css({"width": '100%', "height": '100%'});
+            $(".tool-box").addClass("add-tool-box").removeClass("rem-tool-box")
+        }
+    }
+    $(window).resize(function () {
+        autoH()
+    });
+
+</script>
+</body>
+</html>
